@@ -7,23 +7,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const { prefix } = require('../../config.json');
 module.exports = {
-    name: 'interactionCreate',
-    execute(interaction) {
+    name: 'messageCreate',
+    execute(message) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (!interaction.isCommand() || !interaction.guildId)
+            if (!message.guild)
                 return;
-            const command = interaction.client.commands.get(interaction.commandName);
-            if (!command)
+            if (message.author.bot)
                 return;
-            try {
-                yield command.execute(interaction);
-            }
-            catch (error) {
-                console.error(error);
-                yield interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+            if (message.content[0] == prefix) {
+                let content = message.content.slice(1);
+                /* const command = interaction.client.commands.get(interaction.commandName); */
+                let commands = message.client.commands;
+                console.log(commands[0].name);
             }
         });
     },
 };
-//# sourceMappingURL=interactionCreate.js.map
+//# sourceMappingURL=messageCreate.js.map
