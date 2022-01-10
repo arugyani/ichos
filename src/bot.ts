@@ -1,5 +1,5 @@
 import { Snowflake } from "discord-api-types";
-import { MusicSubscription } from "./music/MusicSubscription";
+import { MusicSubscription } from "./music/subscription";
 
 const fs = require('fs');
 

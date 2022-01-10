@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const builders_1 = require("@discordjs/builders");
 const voice_1 = require("@discordjs/voice");
 const discord_js_1 = require("discord.js");
-const MusicSubscription_1 = require("../music/MusicSubscription");
+const subscription_1 = require("../music/subscription");
 module.exports = {
     data: new builders_1.SlashCommandBuilder()
         .setName('join')
@@ -21,10 +21,10 @@ module.exports = {
         return __awaiter(this, void 0, void 0, function* () {
             const subscriptions = require('../bot');
             let subscription = subscriptions.get(interaction.guildId);
-            if (!subscription) {
+            if (!subscription) { // no subscription exists
                 if (interaction.member instanceof discord_js_1.GuildMember && interaction.member.voice.channel !== null) {
                     const channel = interaction.member.voice.channel;
-                    subscription = new MusicSubscription_1.MusicSubscription((0, voice_1.joinVoiceChannel)({
+                    subscription = new subscription_1.MusicSubscription((0, voice_1.joinVoiceChannel)({
                         channelId: channel.id,
                         guildId: channel.guild.id,
                         adapterCreator: channel.guild.voiceAdapterCreator,
@@ -36,12 +36,12 @@ module.exports = {
                 else
                     yield interaction.reply('You need to join a voice channel first!');
             }
-            else {
+            else { // move to current user voice channel
                 if (interaction.member instanceof discord_js_1.GuildMember && interaction.member.voice.channel !== null) {
                     const channel = interaction.member.voice.channel;
                     subscription.connection.destroy();
                     subscriptions.delete(interaction.guildId);
-                    subscription = new MusicSubscription_1.MusicSubscription((0, voice_1.joinVoiceChannel)({
+                    subscription = new subscription_1.MusicSubscription((0, voice_1.joinVoiceChannel)({
                         channelId: channel.id,
                         guildId: channel.guild.id,
                         adapterCreator: channel.guild.voiceAdapterCreator,

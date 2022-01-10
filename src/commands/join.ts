@@ -2,7 +2,7 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import { joinVoiceChannel } from '@discordjs/voice';
 import { GuildMember } from 'discord.js';
 
-import { MusicSubscription } from '../music/MusicSubscription';
+import { MusicSubscription } from '../music/subscription';
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -12,10 +12,9 @@ module.exports = {
         const subscriptions = require('../bot');
 		let subscription = subscriptions.get(interaction.guildId);
 
-        if (!subscription) {
+        if (!subscription) { // no subscription exists
             if (interaction.member instanceof GuildMember && interaction.member.voice.channel !== null) {
                 const channel = interaction.member.voice.channel;
-
                 subscription = new MusicSubscription(
                     joinVoiceChannel({
                         channelId: channel.id,
@@ -29,7 +28,7 @@ module.exports = {
 
                 await interaction.reply(`Joining ${channel.name}`);
             } else await interaction.reply('You need to join a voice channel first!');
-        } else {
+        } else { // move to current user voice channel
             if (interaction.member instanceof GuildMember && interaction.member.voice.channel !== null) {
                 const channel = interaction.member.voice.channel;
 
