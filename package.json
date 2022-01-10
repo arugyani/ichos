@@ -1,0 +1,30 @@
+{
+  "name": "ichos",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npm run build && node -r tsconfig-paths/register dist/deploy-commands dist/bot",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "prettier": "prettier --write **/*.{ts,js,json,yml,yaml}",
+    "build": "tsc",
+    "build:check": "tsc --noEmit --incremental false"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/opus": "^0.7.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "@discordjs/voice": "^0.7.5",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.1",
+    "libsodium-wrappers": "^0.7.9",
+    "tsconfig-paths": "^3.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
