@@ -2,7 +2,7 @@
   "name": "ichos",
   "version": "1.0.0",
   "scripts": {
-    "start": "npm run build && node -r tsconfig-paths/register dist/deploy-commands dist/bot",
+    "start": "npm run build && node -r tsconfig-paths/register dist/bot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
