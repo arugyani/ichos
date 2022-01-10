@@ -13,7 +13,7 @@ module.exports = {
 		let subscription = subscriptions.get(interaction.guildId);
 
         if (!subscription) {
-            if (interaction.member instanceof GuildMember && interaction.member.voice.channel) {
+            if (interaction.member instanceof GuildMember && interaction.member.voice.channel !== null) {
                 const channel = interaction.member.voice.channel;
 
                 subscription = new MusicSubscription(
@@ -28,7 +28,27 @@ module.exports = {
                 subscriptions.set(interaction.guildId, subscription);
 
                 await interaction.reply(`Joining ${channel.name}`);
-            } else await interaction.followUp('You need to join a voice channel first!');
+            } else await interaction.reply('You need to join a voice channel first!');
+        } else {
+            if (interaction.member instanceof GuildMember && interaction.member.voice.channel !== null) {
+                const channel = interaction.member.voice.channel;
+
+                subscription.connection.destroy();
+                subscriptions.delete(interaction.guildId);
+
+                subscription = new MusicSubscription(
+                    joinVoiceChannel({
+                        channelId: channel.id,
+                        guildId: channel.guild.id,
+                        adapterCreator: channel.guild.voiceAdapterCreator,
+                    })
+                );
+
+                subscription.connection.on('error', console.warn);
+                subscriptions.set(interaction.guildId, subscription);
+
+                await interaction.reply(`Joining ${channel.name}`);
+            } else await interaction.reply('You need to join a voice channel first!');
         }
 	},
 };

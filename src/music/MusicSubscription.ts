@@ -13,5 +13,11 @@ export class MusicSubscription {
     
     public constructor(connection: VoiceConnection) {
         this.connection = connection;
+
+        this.connection.on('stateChange', async (_: any, newState: { status: any; reason: any; closeCode: number; }) => {
+            if (newState.status === VoiceConnectionStatus.Disconnected) {
+                
+            }
+        });
     }
 }
