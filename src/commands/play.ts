@@ -54,24 +54,24 @@ module.exports = {
         try {
             const track = await Track.from(url, {
                 onStart() {
-                    interaction.followUp("Now playing!");
+                    interaction.followUp(`**Now playing** | __${track.title}__ |`);
                 },
 
                 onFinish() {
-                    interaction.followUp("Now finished!");
+                    interaction.followUp(`**Finished playing** | __${track.title}__ |`);
                 },
 
                 onError(error) {
                     console.warn(error);
-                    interaction.followUp(`Error: ${error.message}`);
+                    interaction.followUp(`**Error**: ${error.message}`);
                 },
             });
 
             subscription.enqueue(track);
-            await interaction.reply(`Queued ${track.title}`);
+            await interaction.reply(`**Queued** | __${track.title}__ |`);
         } catch (err) {
             console.warn(err);
-            await interaction.followUp('Failed to play track.');
+            await interaction.reply('Failed to play track.');
         }
 	},
 };

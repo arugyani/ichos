@@ -9,18 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MusicSubscription = void 0;
-const voice_1 = require("@discordjs/voice");
-const node_util_1 = require("node:util");
-const wait = (0, node_util_1.promisify)(setTimeout);
-class MusicSubscription {
-    constructor(connection) {
-        this.connection = connection;
-        this.connection.on('stateChange', (_, newState) => __awaiter(this, void 0, void 0, function* () {
-            if (newState.status === voice_1.VoiceConnectionStatus.Disconnected) {
+const builders_1 = require("@discordjs/builders");
+module.exports = {
+    data: new builders_1.SlashCommandBuilder()
+        .setName('pause')
+        .setDescription('Pauses the currently playing song.'),
+    execute(interaction) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const subscriptions = require('../bot');
+            let subscription = subscriptions.get(interaction.guildId);
+            if (subscription) {
+                subscription.player.pause();
+                yield interaction.reply('Paused!');
             }
-        }));
-    }
-}
-exports.MusicSubscription = MusicSubscription;
-//# sourceMappingURL=MusicSubscription.js.map
+            else
+                yield interaction.reply('Not playing anything right now!');
+        });
+    },
+};
+//# sourceMappingURL=pause.js.map

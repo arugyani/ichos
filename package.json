@@ -1,12 +1,13 @@
 {
   "name": "ichos",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "start": "npm run build && node -r tsconfig-paths/register dist/bot",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
     "prettier": "prettier --write **/*.{ts,js,json,yml,yaml}",
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "build:check": "tsc --noEmit --incremental false",
     "deploy": "npm run build && node -r tsconfig-paths/register dist/deploy-commands"

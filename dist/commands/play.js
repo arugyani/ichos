@@ -53,22 +53,22 @@ module.exports = {
             try {
                 const track = yield track_1.Track.from(url, {
                     onStart() {
-                        interaction.followUp("Now playing!");
+                        interaction.followUp(`**Now playing** | __${track.title}__ |`);
                     },
                     onFinish() {
-                        interaction.followUp("Now finished!");
+                        interaction.followUp(`**Finished playing** | __${track.title}__ |`);
                     },
                     onError(error) {
                         console.warn(error);
-                        interaction.followUp(`Error: ${error.message}`);
+                        interaction.followUp(`**Error**: ${error.message}`);
                     },
                 });
                 subscription.enqueue(track);
-                yield interaction.reply(`Queued ${track.title}`);
+                yield interaction.reply(`**Queued** | __${track.title}__ |`);
             }
             catch (err) {
                 console.warn(err);
-                yield interaction.followUp('Failed to play track.');
+                yield interaction.reply('Failed to play track.');
             }
         });
     },
