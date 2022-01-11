@@ -1,4 +1,4 @@
-import { getInfo } from 'ytdl-core';
+import { getInfo, validateURL } from 'ytdl-core';
 import { AudioResource, createAudioResource, demuxProbe } from '@discordjs/voice';
 import { raw as ytdl } from 'youtube-dl-exec';
 
