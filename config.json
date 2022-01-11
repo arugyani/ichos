@@ -1,6 +1,6 @@
 {
-    "clientId": "929979107603783680",
-    "guildId": "929978771866517554",
-    "token": "OTI5OTc5MTA3NjAzNzgzNjgw.YdvMiQ.0zwA6ASBYhDvg50qyXrV9G5JY08",
-    "yt": "AIzaSyBref2jqa-7judqyur_mwMglrQTnYF5n9Q"
+    "clientId": "CLIENT_ID",
+    "guildId": "GUILD_ID",
+    "token": "BOT_TOKEN",
+    "yt": "YT_API_KEY"
 }
