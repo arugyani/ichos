@@ -18,7 +18,6 @@ module.exports = {
 
 		const video = await youtube.searchVideos(term);
 
-		console.log(video);
-		await interaction.reply(`| ${video.title} |\n\t${video.url}`);
+		await interaction.reply(`**__${video.title}__**\n${video.url}`);
 	},
 };

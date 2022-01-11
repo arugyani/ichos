@@ -13,7 +13,7 @@ module.exports = {
             subscription.player.stop();
             subscription.queue = [];
 
-            await interaction.reply('Resumed playing!');
+            await interaction.reply('Stopped playing!');
         } else await interaction.reply('Not playing anything right now!');
 	},
 };

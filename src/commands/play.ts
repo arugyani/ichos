@@ -11,13 +11,19 @@ import { Track } from '../music/track';
 
 import { MusicSubscription } from '../music/subscription';
 
+import { raw as ytdl } from 'youtube-dl-exec';
+import { validateURL } from 'ytdl-core';
+const { yt } = require('../../config.json');
+const YouTube = require("discord-youtube-api");
+const youtube = new YouTube(yt);
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('play')
 		.setDescription('Play a song.')
         .addStringOption(option =>
-            option.setName('url')
-                .setDescription('YouTube url for the song')
+            option.setName('term')
+                .setDescription('YouTube search term for the song')
                 .setRequired(true)),
 	async execute(interaction) {
         const subscriptions = require('../bot');
@@ -49,7 +55,13 @@ module.exports = {
         }
 
         // create track
-        const url = interaction.options.get('url')!.value! as string;
+        let url = interaction.options.get('term')!.value! as string;
+
+        if (validateURL(url) == false) {
+            const video = await youtube.searchVideos(url);
+
+            url = video.url;
+        }
 
         try {
             const track = await Track.from(url, {
