@@ -19,6 +19,17 @@ Invite the bot to your Discord server of choice.
 
 Configure `config.json` to match your bot's token, client ID, and guild ID (the ID of the server the bot is in) as well as your YouTube API key.
 
+
+```
+{
+    "clientId": "CLIENT_ID_HERE",
+    "guildId": "GUILD_ID_HERE",
+    "token": "BOT_TOKEN_HERE",
+    "yt": "YOUTUBE_API_KEY_HERE"
+}
+```
+
+
 To register the commands to your server run: `npm run deploy`
 
 Now the bot can be started using: `npm start`
