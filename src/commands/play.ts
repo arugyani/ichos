@@ -23,7 +23,7 @@ module.exports = {
 		.setDescription('Play a song.')
         .addStringOption(option =>
             option.setName('term')
-                .setDescription('YouTube search term for the song')
+                .setDescription('YouTube search term or url')
                 .setRequired(true)),
 	async execute(interaction) {
         const subscriptions = require('../bot');
