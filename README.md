@@ -51,3 +51,6 @@ Now the bot can be started using: `npm start`
 `/leave` : Leaves a voice call if inside one.
 
 ### Developed by [Aru Gyani](http://github.com/AruGyani) and [Eralp Orkun](http://github.com/eaorkun)
+### Graphic Design by [Pranav Abbaraju](http://linkedin.com/in/pranavabbaraju)
+
+![](https://github.com/AruGyani/ichos/blob/pfp.jpg?raw=true)
