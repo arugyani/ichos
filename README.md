@@ -7,7 +7,7 @@ This `node.js` application is powered by DiscordJS to interface with the Discord
 ichos is fully written in Typescript and was deployed 24/7 for personal use using [Heroku](https://elements.heroku.com/buildpacks/synicalsyntax/discord.js-heroku).
 
 
-![Alt text](https://github.com/AruGyani/ichos/blob/eaorkun-patch-1/ichos_small.png?raw=true)
+![Alt text](https://github.com/AruGyani/ichos/blob/master/ichos_small.png?raw=true)
 
 Functionality includes:
 
