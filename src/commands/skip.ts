@@ -3,7 +3,7 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('skip')
-		.setDescription('Skips the current song.'),
+		.setDescription('Skips the currently playing song.'),
 	async execute(interaction) {
         const subscriptions = require('../bot');
 		let subscription = subscriptions.get(interaction.guildId);
