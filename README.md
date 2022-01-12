@@ -1,10 +1,15 @@
 # ichos
 
-ichos is a `node.js` bot powered by DiscordJS and the YouTube API and written in Typescript. Functionality includes:
+ichos is a Discord Music bot which plays music in a voice channel according to user definined commands. This `node.js` application is powered by DiscordJS to interface with the Discord API and utilizes the YouTube API to search for songs. ichos is fully written in Typescript and was deployed for personal use using [Heroku]
+(https://elements.heroku.com/buildpacks/synicalsyntax/discord.js-heroku). 
+
+![Alt text](https://github.com/AruGyani/ichos/blob/master/pfp.jpg?raw=true)
+
+Functionality includes:
 
 * Voice Connection
-* Music Playing:
-  * Play, Pause, Resume, Stop, Join, Leave, Search
+* Synchronous Audio/Music Player
+* Over 20 Custom made discord commands including Play, Pause, Stop, Queue, Swap, Shuffle, and Search
 
 
 ## Setup
@@ -36,6 +41,7 @@ Now the bot can be started using: `npm start`
 
 ## Usage
 
+Here are a couple commonly used commands and there usage. ichos features over 20 Custom made discord commands
 `/play <term>` : This command takes either a YouTube video url or a search term for a YouTube video.
 
 `/search <term>` : To search for a YouTube video, simply pass in a search term or phrase.
@@ -53,4 +59,4 @@ Now the bot can be started using: `npm start`
 ### Developed by [Aru Gyani](http://github.com/AruGyani) and [Eralp Orkun](http://github.com/eaorkun)
 ### Graphic Design by [Pranav Abbaraju](http://linkedin.com/in/pranavabbaraju)
 
-![Alt text](https://github.com/AruGyani/ichos/blob/master/pfp.jpg?raw=true)
+
