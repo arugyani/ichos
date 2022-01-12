@@ -1,10 +1,14 @@
 # ichos
 
-ichos is a `node.js` bot powered by DiscordJS and the YouTube API and written in Typescript. Functionality includes:
+ichos is a Discord Music bot which plays music in discord voice channels. This `node.js` application is powered by DiscordJS to interface with the Discord API and utilizes the YouTube API to search for songs. ichos is fully written in Typescript and was deployed 24/7 for personal use using [Heroku](https://elements.heroku.com/buildpacks/synicalsyntax/discord.js-heroku).
+
+![Alt text](https://github.com/AruGyani/ichos/blob/master/pfp.jpg?raw=true)
+
+Functionality includes:
 
 * Voice Connection
-* Music Playing:
-  * Play, Pause, Resume, Stop, Join, Leave, Search
+* Synchronous Audio/Music Player
+* Over 20 Custom made discord commands including Play, Pause, Stop, Queue, Swap, Shuffle, and Search
 
 
 ## Setup
@@ -34,23 +38,31 @@ To register the commands to your server run: `npm run deploy`
 
 Now the bot can be started using: `npm start`
 
-## Usage
+## Example Usage
+
+#### These are some of the most commonly used commands
 
 `/play <term>` : This command takes either a YouTube video url or a search term for a YouTube video.
 
-`/search <term>` : To search for a YouTube video, simply pass in a search term or phrase.
+`/queue` : Displays the current queue.
 
-`/pause` : Pauses any currently playing audio
+`/shuffle` : Shuffles the current queue.
 
-`/resume` : Resumes any paused audio
+`/skip` : Skips the currently playing song.
 
-`/stop` : Stops and currently playing audio and clears the queue
+`/move <move_from> <move_to>` : Move a song to a specified location in queue
 
-`/join` : Joins a user's voice call
+`/remove <pos>` : Removes a song at the specified location from queue
+
+`/pause` : Pauses any currently playing audio.
+
+`/resume` : Resumes any paused audio.
+
+`/stop` : Stops and currently playing audio and clears the queue.
 
 `/leave` : Leaves a voice call if inside one.
 
 ### Developed by [Aru Gyani](http://github.com/AruGyani) and [Eralp Orkun](http://github.com/eaorkun)
 ### Graphic Design by [Pranav Abbaraju](http://linkedin.com/in/pranavabbaraju)
 
-![Alt text](https://github.com/AruGyani/ichos/blob/master/pfp.jpg?raw=true)
+
