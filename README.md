@@ -1,6 +1,6 @@
 # ichos
 
-ichos is a bot written in `node.js`  powered by DiscordJS and the YouTube API. Functionality includes:
+ichos is a `node.js` bot powered by DiscordJS and the YouTube API and written in Typescript. Functionality includes:
 
 * Voice Connection
 * Music Playing:
