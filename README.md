@@ -1,8 +1,13 @@
 # ichos
 
-ichos is a Discord Music bot which plays music in discord voice channels. This `node.js` application is powered by DiscordJS to interface with the Discord API and utilizes the YouTube API to search for songs. ichos is fully written in Typescript and was deployed 24/7 for personal use using [Heroku](https://elements.heroku.com/buildpacks/synicalsyntax/discord.js-heroku).
+ichos is a Discord Music bot which plays music in discord voice channels. 
 
-![Alt text](https://github.com/AruGyani/ichos/blob/master/pfp.jpg?raw=true)
+This `node.js` application is powered by DiscordJS to interface with the Discord API and utilizes the YouTube API to search for songs. 
+
+ichos is fully written in Typescript and was deployed 24/7 for personal use using [Heroku](https://elements.heroku.com/buildpacks/synicalsyntax/discord.js-heroku).
+
+
+![Alt text](https://github.com/AruGyani/ichos/blob/eaorkun-patch-1/ichos_small.png?raw=true)
 
 Functionality includes:
 
