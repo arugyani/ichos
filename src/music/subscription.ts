@@ -60,6 +60,28 @@ export class MusicSubscription {
         void this.processQueue();
     }
 
+
+
+    
+    public shuffle() {
+        let currentIndex = this.queue.length,  randomIndex;
+    
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+    
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+        
+            // And swap it with the current element.
+            [this.queue[currentIndex], this.queue[randomIndex]] = [
+                this.queue[randomIndex], this.queue[currentIndex]];
+        }
+    
+        return;
+    }
+
+
     private async processQueue(): Promise<void> {
         if (this.queueLock || this.player.state.status !== AudioPlayerStatus.Idle || this.queue.length === 0) {
 			return;
