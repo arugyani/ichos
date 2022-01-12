@@ -38,20 +38,27 @@ To register the commands to your server run: `npm run deploy`
 
 Now the bot can be started using: `npm start`
 
-## Usage
+## Example Usage
 
-Here are a couple commonly used commands and there usage. ichos features over 20 Custom made discord commands
+#### These are some of the most commonly used commands
+
 `/play <term>` : This command takes either a YouTube video url or a search term for a YouTube video.
 
-`/search <term>` : To search for a YouTube video, simply pass in a search term or phrase.
+`/queue` : Displays the current queue.
 
-`/pause` : Pauses any currently playing audio
+`/shuffle` : Shuffles the current queue.
 
-`/resume` : Resumes any paused audio
+`/skip` : Skips the currently playing song.
 
-`/stop` : Stops and currently playing audio and clears the queue
+`/move <move_from> <move_to>` : Move a song to a specified location in queue
 
-`/join` : Joins a user's voice call
+`/remove <pos>` : Removes a song at the specified location from queue
+
+`/pause` : Pauses any currently playing audio.
+
+`/resume` : Resumes any paused audio.
+
+`/stop` : Stops and currently playing audio and clears the queue.
 
 `/leave` : Leaves a voice call if inside one.
 
