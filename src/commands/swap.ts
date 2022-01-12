@@ -37,7 +37,7 @@ module.exports = {
                             .map((track, index) => `${index + 1} - ${track.title}`)
                             .join('\n');
 
-                        await interaction.reply(`Swapped songs at positions ${first + 1} andnpm ${second + 1}.\n\n${queue}`);
+                        await interaction.reply(`Swapped songs at positions ${first + 1} and ${second + 1}.\n\n${queue}`);
                     } else await interaction.reply('This is the same song.');
                 } else await interaction.reply('Error. Second position is not within queue size.');
             } else await interaction.reply('Error. First position is not within queue size.');

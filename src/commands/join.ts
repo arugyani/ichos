@@ -7,7 +7,7 @@ import { MusicSubscription } from '../music/subscription';
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('join')
-		.setDescription('Join voice channel.'),
+		.setDescription('Joins your current voice channel.'),
 	async execute(interaction) {
         const subscriptions = require('../bot');
 		let subscription = subscriptions.get(interaction.guildId);

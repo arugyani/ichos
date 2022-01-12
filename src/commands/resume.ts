@@ -7,7 +7,7 @@ import { MusicSubscription } from '../music/subscription';
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('resume')
-		.setDescription('Resumes play for ichos.'),
+		.setDescription('Resumes the currently playing song.'),
 	async execute(interaction) {
         const subscriptions = require('../bot');
 		let subscription = subscriptions.get(interaction.guildId);

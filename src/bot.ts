@@ -13,6 +13,7 @@ client.commands = new Collection();
 const commandFiles = fs.readdirSync('./dist/commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./dist/events').filter(file => file.endsWith('.js'));
 
+//mapping server id to its server MusicSubscription
 const subscriptions = new Map<Snowflake, MusicSubscription>();
 
 module.exports = subscriptions;

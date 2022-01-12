@@ -20,7 +20,7 @@ const youtube = new YouTube(yt);
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('play')
-		.setDescription('Plays any song of choice.')
+		.setDescription('Plays any song or video of choice.')
         .addStringOption(option =>
             option.setName('term')
                 .setDescription('YouTube search term or url')
