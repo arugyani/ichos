@@ -13,7 +13,7 @@ Functionality includes:
 
 * Voice Connection
 * Synchronous Audio/Music Player
-* Over 20 Custom made discord commands including Play, Pause, Stop, Queue, Swap, Shuffle, and Search
+* Over 20 custom discord commands including Play, Pause, Stop, Queue, Swap, Shuffle, and Search
 
 
 ## Setup
