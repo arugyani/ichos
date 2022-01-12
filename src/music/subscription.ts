@@ -54,6 +54,12 @@ export class MusicSubscription {
         void this.processQueue();
     }
 
+    public queueNext(track: Track) {
+        this.queue.unshift(track);
+
+        void this.processQueue();
+    }
+
     private async processQueue(): Promise<void> {
         if (this.queueLock || this.player.state.status !== AudioPlayerStatus.Idle || this.queue.length === 0) {
 			return;
